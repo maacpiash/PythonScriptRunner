@@ -1,0 +1,5 @@
+c:\users\maac\documents\visual studio 2015\Projects\PythonScriptRunner\PythonScriptRunner\bin\Debug\PythonScriptRunner.exe.config
+c:\users\maac\documents\visual studio 2015\Projects\PythonScriptRunner\PythonScriptRunner\bin\Debug\PythonScriptRunner.exe
+c:\users\maac\documents\visual studio 2015\Projects\PythonScriptRunner\PythonScriptRunner\bin\Debug\PythonScriptRunner.pdb
+c:\users\maac\documents\visual studio 2015\Projects\PythonScriptRunner\PythonScriptRunner\obj\Debug\PythonScriptRunner.exe
+c:\users\maac\documents\visual studio 2015\Projects\PythonScriptRunner\PythonScriptRunner\obj\Debug\PythonScriptRunner.pdb
