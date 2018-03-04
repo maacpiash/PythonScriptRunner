@@ -14,7 +14,13 @@ namespace PythonScriptRunner
             try
             {
                 Process p = new Process();
-                string arg = string.Format(@"C:\Users\maac\Desktop\another.py");
+                string arg;
+                if(args.Length() >= 2)
+                    arg = args[1];
+                else
+                    arg = "Humpty Dumpty";
+                    /*
+                Console.WriteLine(arg);
                 string prog = string.Format(@"C:\Users\maac\AppData\Local\Programs\Python\Python36\python.exe");
                 p.StartInfo = new ProcessStartInfo(prog, arg);
                 p.StartInfo.UseShellExecute = false;
@@ -24,6 +30,7 @@ namespace PythonScriptRunner
                 p.StartInfo.RedirectStandardOutput = false;
                 p.StartInfo.RedirectStandardError = false;
                 Process processChild = Process.Start(p.StartInfo);
+                */
                 Console.ReadLine();
             }
             catch (Exception x) { Console.WriteLine(x); }
