@@ -11,33 +11,26 @@ namespace PSR
         {
             try
             {
-                // string x = Environment.GetEnvironmentVariable("python");
-                // DirectoryInfo info = new DirectoryInfo(".");
                 string PythonPath = GetPythonPath();
-
+                
                 if (PythonPath == "ERROR")
                 {
-                    Console.WriteLine("Python is not installed, or is not added system variables");
+                    Console.WriteLine("Python is either not installed, or is not added system variables");
                     return;
                 }
 
-                string arg = args[0];
-                string prog = PythonPath;
-                ProcessStartInfo psi = new ProcessStartInfo()
+                string ScriptPath;
+                
+                try { ScriptPath = args[0]; }
+                catch (IndexOutOfRangeException x) // There is still a chance to enter the file name, if not provided as a CLI argument.
                 {
-                    FileName = "cmd.exe",
-                    Arguments = "/C " + PythonPath + " " + args[0],
-                    UseShellExecute = false,
-                    CreateNoWindow = true,
-                    RedirectStandardInput = true,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true
-                };
-                Console.WriteLine("FileName: " + psi.FileName);
-                Console.WriteLine("Arguments: " + psi.Arguments);
-                Process process = Process.Start(psi);
-                //process.WaitForExit();
-                //Console.ReadLine();
+                    Console.Write("Please enter file name: ");
+                    ScriptPath = Console.ReadLine();
+                }
+
+                Process p = Process.Start(PythonPath, ScriptPath);
+                p.WaitForExit();
+                
                 //Console.ReadKey();
             }
             catch (Exception x) { Console.WriteLine("ERROR : " + x.ToString()); }
