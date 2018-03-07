@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Collections.Generic;
 
-namespace PSR
+namespace PythonScriptRunner
 {
     class Program
     {
@@ -24,14 +24,24 @@ namespace PSR
                 try { ScriptPath = args[0]; }
                 catch (IndexOutOfRangeException x) // There is still a chance to enter the file name, if not provided as a CLI argument.
                 {
-                    Console.Write("Please enter file name: ");
+                    Console.WriteLine(x.GetType().ToString());
+                    Console.Write("You must enter a file name: ");
                     ScriptPath = Console.ReadLine();
                 }
-
-                Process p = Process.Start(PythonPath, ScriptPath);
-                p.WaitForExit();
                 
-                //Console.ReadKey();
+                if(File.Exists(ScriptPath))
+                {
+                    Console.WriteLine("\n*** Python Script Begins! ***\n");
+                    Process p = Process.Start(PythonPath, ScriptPath);
+                    p.WaitForExit();
+                    Console.WriteLine("\n*** End of script : The Dot Net Rises!! ***\n");
+                }
+                else
+                {
+                    Console.WriteLine("ERROR: File not found!");
+                }
+                
+                // Console.ReadKey();
             }
             catch (Exception x) { Console.WriteLine("ERROR : " + x.ToString()); }
             
