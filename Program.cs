@@ -49,6 +49,9 @@ namespace PythonScriptRunner
 
         static string GetPythonPath()
         {
+            if(Environment.OSVersion.ToString().Contains("Unix"))
+                return "/bin/bash"; // This may or may not work for Linux and Mac OS
+
             var environmentVariables = Environment.GetEnvironmentVariables();
             string pathVariable = environmentVariables["Path"] as string;
             if (pathVariable != null)
