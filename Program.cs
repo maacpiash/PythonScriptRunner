@@ -58,10 +58,7 @@ namespace PythonScriptRunner
                 foreach (var path in allPaths)
                 {
                     string pythonPathFromEnv;
-                    if(Environment.OSVersion.ToString().Contains("Unix"))
-                        pythonPathFromEnv = Path.Combine(path, "python.exe");
-                    else
-                        pythonPathFromEnv = Path.Combine(path, "python");
+                    pythonPathFromEnv = Path.Combine(path, "python.exe");
                     if (File.Exists(pythonPathFromEnv))
                         return pythonPathFromEnv;
                 }
