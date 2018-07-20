@@ -54,7 +54,7 @@ namespace PythonScriptRunner
                     WriteLine("\n~~~~~~ End of script : The Dot Net Rises!! ~~~~~~\n");
                 
                 WriteLine("Press any key to exit...");
-                ReadKey();
+                //ReadKey();
             }
             catch (Exception x) { WriteLine("ERROR : " + x.ToString()); }
             
