@@ -1,6 +1,8 @@
 # PythonScriptRunner
-
-[![Build Status](https://travis-ci.org/maacpiash/PythonScriptRunner.svg?branch=master)](https://travis-ci.org/maacpiash/PythonScriptRunner)
+| OS | Build Status |
+| -- | ------------ |
+| Linux/macOS | Windows |
+|[![Build Status](https://travis-ci.org/maacpiash/PythonScriptRunner.svg?branch=master)](https://travis-ci.org/maacpiash/PythonScriptRunner) | [![Build status](https://ci.appveyor.com/api/projects/status/6je79n4jn561mqpb?svg=true)](https://ci.appveyor.com/project/maacpiash/pythonscriptrunner) |
 
 A simple cross-platform dotnet core application that takes a Python script as the input and runs the script.
 
